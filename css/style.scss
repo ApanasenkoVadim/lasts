@@ -1,0 +1,274 @@
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$text-color: #333;
+$bg-color: #f5f5f5;
+$highlight-color: #ecf0f1;
+$button-bg: #e74c3c;
+$button-hover: #c0392b;
+$font-stack: 'Arial', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+  background-color: $bg-color;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+header {
+  background-color: $primary-color;
+  color: $highlight-color;
+  padding: 1rem;
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+
+    a {
+      color: $highlight-color;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+main {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+
+  section {
+    h2 {
+      font-size: 1.8rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    article {
+      background: $highlight-color;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+
+      h3 {
+        font-size: 1.4rem;
+        color: $secondary-color;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      figure {
+        margin: 0;
+        text-align: center;
+
+        img {
+          max-width: 100%;
+          border-radius: 0.5rem;
+        }
+
+        figcaption {
+          font-size: 0.9rem;
+          color: $text-color;
+          margin-top: 0.5rem;
+        }
+      }
+
+      button {
+        background-color: $button-bg;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.3rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: $button-hover;
+        }
+      }
+    }
+  }
+}
+
+aside {
+  background-color: $highlight-color;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  h2 {
+    font-size: 1.6rem;
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+#contacts {
+  padding: 2rem;
+  background-color: $primary-color;
+  color: $highlight-color;
+  text-align: center;
+
+  h2 {
+    font-size: 1.8rem;
+    color: $highlight-color;
+    margin-bottom: 1rem;
+  }
+
+  address {
+    font-style: normal;
+    a {
+      color: $secondary-color;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $highlight-color;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $primary-color;
+  color: $highlight-color;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+    text-align: center;
+
+    nav ul {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  main {
+    display: block;
+    padding: 1rem;
+
+    section {
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      article {
+        padding: 1rem;
+
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
+  aside {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  #contacts {
+    padding: 1rem;
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      font-size: 0.9rem;
+    }
+  }
+
+  main {
+    section {
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      article {
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        button {
+          font-size: 0.9rem;
+          padding: 0.4rem 0.8rem;
+        }
+      }
+    }
+  }
+
+  aside {
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  #contacts {
+    h2 {
+      font-size: 1.4rem;
+    }
+    address {
+      font-size: 0.9rem;
+    }
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+}

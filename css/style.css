@@ -1,0 +1,392 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 1rem;
+  text-align: center;
+}
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+header nav ul a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+header nav ul a:hover {
+  color: #3498db;
+}
+
+main {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+}
+main section h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+main section article {
+  background: #ecf0f1;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+main section article h3 {
+  font-size: 1.4rem;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+main section article p {
+  margin-bottom: 1rem;
+}
+main section article figure {
+  margin: 0;
+  text-align: center;
+}
+main section article figure img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+main section article figure figcaption {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 0.5rem;
+}
+main section article button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+main section article button:hover {
+  background-color: #c0392b;
+}
+
+aside {
+  background-color: #ecf0f1;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+aside h2 {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+aside p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+#contacts {
+  padding: 2rem;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+}
+#contacts h2 {
+  font-size: 1.8rem;
+  color: #ecf0f1;
+  margin-bottom: 1rem;
+}
+#contacts address {
+  font-style: normal;
+}
+#contacts address a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+#contacts address a:hover {
+  color: #ecf0f1;
+}
+
+footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+#logo {
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+#logo:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#backToTop:hover {
+  background: #444;
+}
+
+.faq h3 {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.faq p {
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0 10px;
+  background: #f9f9f9;
+  border-left: 3px solid #007bff;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.faq.open p {
+  max-height: 200px; 
+  padding: 10px 10px;
+}
+
+.faq h3 span {
+  transition: transform 0.3s ease;
+}
+
+.faq.open h3 span {
+  transform: rotate(45deg);
+}
+
+.theme-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  background: #ccc;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+.switch::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.switch.active {
+  background: #4db8ff;
+}
+
+.switch.active::before {
+  transform: translateX(25px);
+}
+.theme-switch span {
+  margin-left: 10px;
+}
+body.dark-theme {
+  background: #222;
+  color: #fff;
+}
+body.dark-theme h2{
+  background: #222;
+  color: #ffffff;
+}
+body.dark-theme figcaption{
+  color: #ffffff;
+}
+body.dark-theme article{
+  background: #1d1d1d;
+  color: #fff;
+}
+body.dark-theme aside{
+  background: #1d1d1d;
+  color: #fff;
+}
+body.dark-theme aside h3{
+  background-color: #1d1d1d;
+  color: #fff;
+}
+body.dark-theme aside p{
+  background-color: #1d1d1d;
+  color: #fff;
+}
+body.dark-theme a {
+  color: #4db8ff;
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.icon.sun {
+  left: 15px;
+  color: #ffcc00;
+  opacity: 1;
+}
+
+.icon.moon {
+  right: 25px;
+  color: #fff;
+  opacity: 0;
+}
+
+.switch.active .icon.sun {
+  opacity: 0;
+}
+
+.switch.active .icon.moon {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+    text-align: center;
+  }
+  header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  main {
+    display: block;
+    padding: 1rem;
+  }
+  main section h2 {
+    font-size: 1.6rem;
+  }
+  main section article {
+    padding: 1rem;
+  }
+  main section article h3 {
+    font-size: 1.2rem;
+  }
+  main section article p {
+    font-size: 0.9rem;
+  }
+  aside {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  #contacts {
+    padding: 1rem;
+  }
+  #contacts h2 {
+    font-size: 1.5rem;
+  }
+  footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header nav ul {
+    font-size: 0.9rem;
+  }
+  main section h2 {
+    font-size: 1.4rem;
+  }
+  main section article h3 {
+    font-size: 1.1rem;
+  }
+  main section article button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  aside h2 {
+    font-size: 1.3rem;
+  }
+  aside p {
+    font-size: 0.9rem;
+  }
+  #contacts h2 {
+    font-size: 1.4rem;
+  }
+  #contacts address {
+    font-size: 0.9rem;
+  }
+  footer {
+    font-size: 0.7rem;
+  }
+}/*# sourceMappingURL=style.css.map */
